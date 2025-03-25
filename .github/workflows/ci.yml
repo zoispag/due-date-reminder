@@ -57,8 +57,8 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
-
-      - name: Print Output
-        id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+          gh_token: ${{ secrets.GHPAT }}
+          project_id: 1
+          owner_type: 'user'
+          due_date_field_name: 'Due date'
+          # fallback_assignee: '@ghost'
